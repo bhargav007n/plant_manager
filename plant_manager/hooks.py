@@ -85,6 +85,7 @@ app_license = "mit"
 
 # before_install = "plant_manager.install.before_install"
 after_install = "plant_manager.plant_manager.install.after_install"
+after_migrate = "plant_manager.plant_manager.install.after_migrate"
 
 # Uninstallation
 # ------------
