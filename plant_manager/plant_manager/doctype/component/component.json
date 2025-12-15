@@ -6,14 +6,17 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "image_section",
+  "component_image",
+  "component_attachment",
   "details_section",
-  "component_code",
-  "is_rm",
+  "component_name",
   "uom",
   "hsn_sac_code",
   "dos",
   "column_break_bnsr",
-  "component_name",
+  "component_code",
+  "is_rm",
   "rm_component",
   "rm_type",
   "cl_mm",
@@ -149,12 +152,28 @@
    "fieldname": "blade_mm",
    "fieldtype": "Float",
    "label": "Blade wastage (in mm)"
+  },
+  {
+   "fieldname": "image_section",
+   "fieldtype": "Section Break",
+   "label": "Image"
+  },
+  {
+   "fieldname": "component_attachment",
+   "fieldtype": "Attach Image",
+   "label": "Component Attachment"
+  },
+  {
+   "fieldname": "component_image",
+   "fieldtype": "Image",
+   "label": "Component Image",
+   "options": "component_attachment"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-15 15:22:24.686133",
+ "modified": "2025-12-15 17:51:29.152645",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Component",

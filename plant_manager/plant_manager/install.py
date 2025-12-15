@@ -48,6 +48,13 @@ def after_migrate():
     create_default_process_operation_type("Manual Operation")
     create_default_process_operation_type("Machine Operation")
 
+    # Create default _UOM's
+    create_default_uom_("Nos")
+    create_default_uom_("Meters")
+    create_default_uom_("Kgs")
+    create_default_uom_("Liters")
+    create_default_uom_("Units")
+
 
 # Operation Status for Material In, Material Out & In-House Production
 def create_default_operation_status(doc_name):
