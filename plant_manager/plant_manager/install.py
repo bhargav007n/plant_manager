@@ -58,7 +58,7 @@ def after_migrate():
 
 # Operation Status for Material In, Material Out & In-House Production
 def create_default_operation_status(doc_name):
-    if  not frappe.db.exists("Operation Status", "doc_name"):   
+    if  not frappe.db.exists("Operation Status", doc_name):   
         frappe.get_doc({
             "doctype": "Operation Status",
             "operation_status": doc_name,
@@ -67,7 +67,7 @@ def create_default_operation_status(doc_name):
         
 # Process Operation Types
 def create_default_process_operation_type(doc_name):
-    if  not frappe.db.exists("Process Operation Type", "doc_name"):   
+    if  not frappe.db.exists("Process Operation Type", doc_name):   
         frappe.get_doc({
             "doctype": "Process Operation Type",
             "operation_type": doc_name,
@@ -76,7 +76,7 @@ def create_default_process_operation_type(doc_name):
 
 # UOM_
 def create_default_uom_(doc_name):
-    if  not frappe.db.exists("UOM_", "doc_name"):   
+    if  not frappe.db.exists("UOM_", doc_name):   
         frappe.get_doc({
             "doctype": "UOM_",
             "operation_type": doc_name,
