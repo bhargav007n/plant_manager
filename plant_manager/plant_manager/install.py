@@ -79,7 +79,7 @@ def create_default_uom_(doc_name):
     if  not frappe.db.exists("UOM_", doc_name):   
         frappe.get_doc({
             "doctype": "UOM_",
-            "operation_type": doc_name,
+            "uom_name": doc_name,
             "title": doc_name
         }).insert(ignore_permissions=True)
 
