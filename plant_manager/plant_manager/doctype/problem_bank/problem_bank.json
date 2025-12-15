@@ -9,11 +9,11 @@
   "basic_section",
   "date",
   "component",
-  "process_name",
+  "system_name",
   "defect_desc",
   "problem_identified_by",
   "column_break_zeai",
-  "is_product_failure",
+  "is_system_failure",
   "qty",
   "lost_minutes",
   "severity_of_defect",
@@ -59,13 +59,6 @@
    "read_only_depends_on": "eval:doc.is_product_failure==1"
   },
   {
-   "fieldname": "process_name",
-   "fieldtype": "Data",
-   "label": "Process Name",
-   "mandatory_depends_on": "eval:doc.is_product_failure==1",
-   "read_only_depends_on": "eval:doc.is_product_failure==0"
-  },
-  {
    "fieldname": "defect_desc",
    "fieldtype": "Small Text",
    "label": "Defect / Failure mode Description "
@@ -73,12 +66,6 @@
   {
    "fieldname": "column_break_zeai",
    "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_product_failure",
-   "fieldtype": "Check",
-   "label": "is Product failure"
   },
   {
    "fieldname": "qty",
@@ -240,12 +227,25 @@
    "fieldname": "attachments",
    "fieldtype": "Attach",
    "label": "Attachments"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_system_failure",
+   "fieldtype": "Check",
+   "label": "is system failure"
+  },
+  {
+   "fieldname": "system_name",
+   "fieldtype": "Data",
+   "label": "System Name",
+   "mandatory_depends_on": "eval:doc.is_product_failure==1",
+   "read_only_depends_on": "eval:doc.is_product_failure==0"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-14 20:30:50.432807",
+ "modified": "2025-12-15 19:38:51.936070",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Problem Bank",

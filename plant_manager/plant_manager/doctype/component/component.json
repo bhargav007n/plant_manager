@@ -14,6 +14,7 @@
   "uom",
   "hsn_sac_code",
   "dos",
+  "component_group",
   "column_break_bnsr",
   "component_code",
   "is_rm",
@@ -168,12 +169,18 @@
    "fieldtype": "Image",
    "label": "Component Image",
    "options": "component_attachment"
+  },
+  {
+   "fieldname": "component_group",
+   "fieldtype": "Link",
+   "label": "Component Group",
+   "options": "Component Group"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-15 17:51:29.152645",
+ "modified": "2025-12-15 19:55:40.355603",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Component",
