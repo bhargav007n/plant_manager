@@ -1,0 +1,121 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"YwR_79RT05\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Quality Assurance &amp; Control</span>\",\"col\":12}},{\"id\":\"a8EDFOtVU1\",\"type\":\"card\",\"data\":{\"card_name\":\"QA\",\"col\":4}},{\"id\":\"LYKul5xLGL\",\"type\":\"card\",\"data\":{\"card_name\":\"QC\",\"col\":4}},{\"id\":\"HLqo8scev9\",\"type\":\"card\",\"data\":{\"card_name\":\"Utility\",\"col\":4}}]",
+ "creation": "2025-12-15 14:41:51.311880",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "permission",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Quality Assurance & Control",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "QC",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Rejection Log",
+   "link_count": 0,
+   "link_to": "Rejection Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Rework Log",
+   "link_count": 0,
+   "link_to": "Rework Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Utility",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Task Manager",
+   "link_count": 0,
+   "link_to": "Task Manager",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "QA",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Problem Bank",
+   "link_count": 0,
+   "link_to": "Problem Bank",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Process Operation",
+   "link_count": 0,
+   "link_to": "Process Operation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Process Operation Sequence",
+   "link_count": 0,
+   "link_to": "Process Operation Sequence",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-12-15 15:20:45.194719",
+ "modified_by": "Administrator",
+ "module": "Plant Manager",
+ "name": "Quality Assurance & Control",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "T-QC Inspectors"
+  }
+ ],
+ "sequence_id": 7.0,
+ "shortcuts": [],
+ "title": "Quality Assurance & Control"
+}
