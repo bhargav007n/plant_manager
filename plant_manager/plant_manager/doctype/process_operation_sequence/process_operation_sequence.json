@@ -55,9 +55,10 @@
    "non_negative": 1
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 10:58:22.531299",
+ "modified": "2025-12-15 15:23:25.892296",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Process Operation Sequence",
@@ -75,8 +76,19 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "T-QC Inspectors",
+   "select": 1,
+   "share": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
