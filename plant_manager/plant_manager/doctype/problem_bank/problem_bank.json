@@ -18,6 +18,7 @@
   "lost_minutes",
   "severity_of_defect",
   "resposibility",
+  "responsible_vendor",
   "frequency",
   "qa_action_section",
   "quality_alert",
@@ -48,15 +49,17 @@
   {
    "fieldname": "date",
    "fieldtype": "Date",
-   "label": "Date"
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
   },
   {
    "fieldname": "component",
    "fieldtype": "Link",
    "label": "Component",
-   "mandatory_depends_on": "eval:doc.is_product_failure==0",
+   "mandatory_depends_on": "eval:doc.is_system_failure==0",
    "options": "Component",
-   "read_only_depends_on": "eval:doc.is_product_failure==1"
+   "read_only_depends_on": "eval:doc.is_system_failure==1"
   },
   {
    "fieldname": "defect_desc",
@@ -70,7 +73,9 @@
   {
    "fieldname": "qty",
    "fieldtype": "Float",
-   "label": "Qty "
+   "in_list_view": 1,
+   "label": "Qty ",
+   "reqd": 1
   },
   {
    "fieldname": "lost_minutes",
@@ -134,8 +139,10 @@
   {
    "fieldname": "problem_identified_by",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Problem Identified By",
-   "options": "Work Force"
+   "options": "Work Force",
+   "reqd": 1
   },
   {
    "fieldname": "table_ddtm",
@@ -238,14 +245,20 @@
    "fieldname": "system_name",
    "fieldtype": "Data",
    "label": "System Name",
-   "mandatory_depends_on": "eval:doc.is_product_failure==1",
-   "read_only_depends_on": "eval:doc.is_product_failure==0"
+   "mandatory_depends_on": "eval:doc.is_system_failure==1",
+   "read_only_depends_on": "eval:doc.is_system_failure==0"
+  },
+  {
+   "fieldname": "responsible_vendor",
+   "fieldtype": "Link",
+   "label": "Responsible Vendor",
+   "options": "Vendor"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-15 19:38:51.936070",
+ "modified": "2025-12-16 19:26:37.859009",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Problem Bank",
