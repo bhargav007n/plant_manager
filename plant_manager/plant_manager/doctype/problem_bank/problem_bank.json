@@ -64,7 +64,8 @@
   {
    "fieldname": "defect_desc",
    "fieldtype": "Small Text",
-   "label": "Defect / Failure mode Description "
+   "label": "Defect / Failure mode Description ",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_zeai",
@@ -258,7 +259,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-16 19:26:37.859009",
+ "modified": "2025-12-16 19:40:51.864731",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Problem Bank",
