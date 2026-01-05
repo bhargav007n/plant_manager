@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:prefix",
+ "creation": "2025-12-24 15:37:17.327567",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "cutting_tool_type",
+  "counter",
+  "column_break_vahn",
+  "prefix",
+  "prefix_name"
+ ],
+ "fields": [
+  {
+   "fetch_from": "cutting_tool_type.abbreviation",
+   "fetch_if_empty": 1,
+   "fieldname": "prefix",
+   "fieldtype": "Data",
+   "label": "Prefix",
+   "unique": 1
+  },
+  {
+   "fieldname": "counter",
+   "fieldtype": "Float",
+   "label": "Counter",
+   "non_negative": 1,
+   "precision": "0"
+  },
+  {
+   "fieldname": "cutting_tool_type",
+   "fieldtype": "Link",
+   "label": "Cutting Tool Type",
+   "options": "Cutting Tool Type"
+  },
+  {
+   "fieldname": "column_break_vahn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "prefix_name",
+   "fieldtype": "Data",
+   "label": "Prefix Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-25 17:45:57.316053",
+ "modified_by": "Administrator",
+ "module": "Plant Manager",
+ "name": "Cutting Tool Prefix",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

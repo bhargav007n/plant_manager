@@ -1,25 +1,52 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{group}-{subgroup}",
  "creation": "2025-10-11 18:23:35.209667",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_yh8t"
+  "group",
+  "sub_group",
+  "prefix",
+  "counter",
+  "next_id"
  ],
  "fields": [
   {
-   "fieldname": "section_break_yh8t",
-   "fieldtype": "Section Break"
+   "fieldname": "group",
+   "fieldtype": "Data",
+   "label": "Group"
+  },
+  {
+   "fieldname": "sub_group",
+   "fieldtype": "Data",
+   "label": "Sub group"
+  },
+  {
+   "fieldname": "prefix",
+   "fieldtype": "Data",
+   "label": "Prefix"
+  },
+  {
+   "fieldname": "counter",
+   "fieldtype": "Float",
+   "label": "Counter"
+  },
+  {
+   "fieldname": "next_id",
+   "fieldtype": "Data",
+   "label": "Next ID"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-11 18:23:35.209667",
+ "modified": "2025-12-20 12:16:53.395606",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Asset Group",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,0 +1,172 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:accessory_id",
+ "creation": "2026-01-05 18:07:30.598339",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "accessory_id",
+  "accessory_type",
+  "barcode_id",
+  "column_break_jydq",
+  "variable_id",
+  "prefix",
+  "description",
+  "current_status_section",
+  "issued_date",
+  "issued_to",
+  "to_machine",
+  "for_component",
+  "current_location",
+  "column_break_lnnu",
+  "status",
+  "usage_info",
+  "usage_logs_tab",
+  "usage_log_section",
+  "usage_log"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fetch_from": "prefix.prefix_name",
+   "fetch_if_empty": 1,
+   "fieldname": "barcode_id",
+   "fieldtype": "Barcode",
+   "label": "Barcode ID"
+  },
+  {
+   "fieldname": "column_break_jydq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "variable_id",
+   "fieldtype": "Data",
+   "label": "Variable ID"
+  },
+  {
+   "fieldname": "prefix",
+   "fieldtype": "Link",
+   "label": "Prefix",
+   "options": "Accessory Prefix"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "current_status_section",
+   "fieldtype": "Section Break",
+   "label": "Current status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issued_date",
+   "fieldtype": "Datetime",
+   "label": "Issued Date"
+  },
+  {
+   "fieldname": "issued_to",
+   "fieldtype": "Link",
+   "label": "Issued to",
+   "options": "Work Force"
+  },
+  {
+   "fieldname": "to_machine",
+   "fieldtype": "Link",
+   "label": "To Machine",
+   "options": "Machine and Equipment List"
+  },
+  {
+   "fieldname": "for_component",
+   "fieldtype": "Link",
+   "label": "For Component",
+   "options": "Component"
+  },
+  {
+   "fieldname": "current_location",
+   "fieldtype": "Link",
+   "label": "Current Location",
+   "options": "Storage Location"
+  },
+  {
+   "fieldname": "column_break_lnnu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nReady to use\nAllocated\nAllocated for future\nNeed repair\nBroken"
+  },
+  {
+   "fieldname": "usage_info",
+   "fieldtype": "Small Text",
+   "label": "Usage Info"
+  },
+  {
+   "fieldname": "usage_logs_tab",
+   "fieldtype": "Tab Break",
+   "label": "Usage Logs"
+  },
+  {
+   "fieldname": "usage_log_section",
+   "fieldtype": "Section Break",
+   "label": "Usage Log"
+  },
+  {
+   "fieldname": "usage_log",
+   "fieldtype": "Table",
+   "label": "Usage Log",
+   "options": "Cutting Tool Usage Log"
+  },
+  {
+   "fieldname": "accessory_type",
+   "fieldtype": "Link",
+   "label": "Accessory Type",
+   "options": "Accessory Type"
+  },
+  {
+   "fetch_from": "prefix.prefix_name",
+   "fetch_if_empty": 1,
+   "fieldname": "accessory_id",
+   "fieldtype": "Data",
+   "label": "Accessory ID",
+   "read_only": 1,
+   "unique": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-05 19:46:45.732684",
+ "modified_by": "Administrator",
+ "module": "Plant Manager",
+ "name": "Machine Tool Accessory",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

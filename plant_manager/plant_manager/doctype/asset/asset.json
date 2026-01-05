@@ -8,10 +8,12 @@
   "asset_id",
   "asset_group",
   "search_id",
+  "search_group",
   "column_break_gtmn",
   "purchased_date",
   "type_of_consumption",
   "qty",
+  "remaining_qty",
   "current_satus_section",
   "issued_date",
   "issued_to",
@@ -21,13 +23,19 @@
   "column_break_qfbu",
   "usage_info",
   "logs_section",
-  "table_bsju"
+  "usage_log",
+  "purchase_of_assets_section",
+  "purchase_log"
  ],
  "fields": [
   {
+   "fetch_from": "asset_group.next_id",
+   "fetch_if_empty": 1,
    "fieldname": "asset_id",
    "fieldtype": "Data",
-   "label": "Asset ID"
+   "label": "Asset ID",
+   "read_only": 1,
+   "unique": 1
   },
   {
    "fieldname": "asset_group",
@@ -38,7 +46,8 @@
   {
    "fieldname": "search_id",
    "fieldtype": "Data",
-   "label": "Search ID"
+   "label": "Search ID",
+   "unique": 1
   },
   {
    "fieldname": "column_break_gtmn",
@@ -67,7 +76,7 @@
   },
   {
    "fieldname": "issued_date",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Issued Date"
   },
   {
@@ -108,15 +117,40 @@
    "label": "Logs"
   },
   {
-   "fieldname": "table_bsju",
+   "fieldname": "usage_log",
    "fieldtype": "Table",
+   "label": "Usage Log",
    "options": "Asset Usage Log"
+  },
+  {
+   "depends_on": "eval: doc.type_of_consumption ==\"Single-use\"",
+   "fieldname": "remaining_qty",
+   "fieldtype": "Float",
+   "label": "Remaining Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "purchase_of_assets_section",
+   "fieldtype": "Section Break",
+   "label": "Purchase of assets"
+  },
+  {
+   "fieldname": "purchase_log",
+   "fieldtype": "Table",
+   "label": "Purchase Log",
+   "options": "Asset Purchase Log"
+  },
+  {
+   "fieldname": "search_group",
+   "fieldtype": "Link",
+   "label": "Search Group",
+   "options": "Asset Search Group"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-09 18:41:44.908716",
+ "modified": "2025-12-20 13:46:23.896144",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Asset",

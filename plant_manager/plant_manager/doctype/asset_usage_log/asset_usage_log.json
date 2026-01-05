@@ -11,6 +11,7 @@
   "to_machine",
   "for_component",
   "issued_location",
+  "consumed_qty",
   "column_break_agcu",
   "returned_date",
   "returned_location",
@@ -63,13 +64,19 @@
    "fieldname": "usage_info",
    "fieldtype": "Text",
    "label": "Usage info"
+  },
+  {
+   "fieldname": "consumed_qty",
+   "fieldtype": "Float",
+   "label": "Consumed Qty",
+   "read_only_depends_on": "eval:doc.type_of_consumption==\"Single-use\";"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-12-09 18:57:44.742401",
+ "modified": "2025-12-18 17:37:34.933892",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Asset Usage Log",

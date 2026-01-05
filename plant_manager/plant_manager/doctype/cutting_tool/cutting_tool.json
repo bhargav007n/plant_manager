@@ -1,0 +1,252 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:cutting_tool_id",
+ "creation": "2025-12-24 14:16:57.128825",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "cutting_tool_id",
+  "cutting_tool_type",
+  "barcode_id",
+  "column_break_jydq",
+  "variable_id",
+  "prefix",
+  "description",
+  "current_status_section",
+  "issued_date",
+  "issued_to",
+  "to_machine",
+  "for_component",
+  "current_location",
+  "column_break_lnnu",
+  "status",
+  "usage_info",
+  "round_tools_tab",
+  "section_break_ffws",
+  "cutting_dia",
+  "grade_and_coating",
+  "tip_radius",
+  "shank_diameter",
+  "relieve_diameter",
+  "column_break_dktt",
+  "flute_length",
+  "application_material",
+  "tip_angle",
+  "overall_length",
+  "relieve_length",
+  "usage_logs_tab",
+  "usage_log_section",
+  "usage_log"
+ ],
+ "fields": [
+  {
+   "fieldname": "cutting_tool_type",
+   "fieldtype": "Link",
+   "label": "Cutting Tool Type",
+   "options": "Cutting Tool Type"
+  },
+  {
+   "fieldname": "grade_and_coating",
+   "fieldtype": "Select",
+   "label": "Grade and Coating",
+   "options": "\nHSS\nHSS-E (Co 5%)\nHSS Co (Co 8%)\nCarbide-Plain\nCarbide- Alcrona"
+  },
+  {
+   "fieldname": "tip_radius",
+   "fieldtype": "Float",
+   "label": "Tip Radius"
+  },
+  {
+   "fieldname": "shank_diameter",
+   "fieldtype": "Float",
+   "label": "Shank Diameter"
+  },
+  {
+   "fieldname": "relieve_diameter",
+   "fieldtype": "Float",
+   "label": "Relieve Diameter"
+  },
+  {
+   "fieldname": "column_break_dktt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "prefix",
+   "fieldtype": "Link",
+   "label": "Prefix",
+   "options": "Cutting Tool Prefix"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "application_material",
+   "fieldtype": "Select",
+   "label": "Application Material",
+   "options": "\nM.S\nAlloy Steel\nS.S\nAluminum\nBrass\nCopper"
+  },
+  {
+   "fieldname": "tip_angle",
+   "fieldtype": "Float",
+   "label": "Tip Angle"
+  },
+  {
+   "fieldname": "flute_length",
+   "fieldtype": "Float",
+   "label": "Flute Length"
+  },
+  {
+   "fieldname": "overall_length",
+   "fieldtype": "Float",
+   "label": "Overall Length"
+  },
+  {
+   "fieldname": "relieve_length",
+   "fieldtype": "Float",
+   "label": "Relieve Length"
+  },
+  {
+   "fieldname": "cutting_dia",
+   "fieldtype": "Data",
+   "label": "Cutting Dia"
+  },
+  {
+   "fetch_from": "prefix.prefix_name",
+   "fetch_if_empty": 1,
+   "fieldname": "cutting_tool_id",
+   "fieldtype": "Data",
+   "label": "Cutting Tool ID",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "usage_log_section",
+   "fieldtype": "Section Break",
+   "label": "Usage Log"
+  },
+  {
+   "fieldname": "usage_log",
+   "fieldtype": "Table",
+   "label": "Usage Log",
+   "options": "Cutting Tool Usage Log"
+  },
+  {
+   "fieldname": "current_status_section",
+   "fieldtype": "Section Break",
+   "label": "Current status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issued_date",
+   "fieldtype": "Datetime",
+   "label": "Issued Date"
+  },
+  {
+   "fieldname": "issued_to",
+   "fieldtype": "Link",
+   "label": "Issued to",
+   "options": "Work Force"
+  },
+  {
+   "fieldname": "to_machine",
+   "fieldtype": "Link",
+   "label": "To Machine",
+   "options": "Machine and Equipment List"
+  },
+  {
+   "fieldname": "for_component",
+   "fieldtype": "Link",
+   "label": "For Component",
+   "options": "Component"
+  },
+  {
+   "fieldname": "column_break_lnnu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "usage_info",
+   "fieldtype": "Small Text",
+   "label": "Usage Info"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nReady to use\nMove to resharp\nBroken"
+  },
+  {
+   "fieldname": "column_break_jydq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "variable_id",
+   "fieldtype": "Data",
+   "label": "Variable ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ffws",
+   "fieldtype": "Section Break",
+   "label": "Round Tool Spec"
+  },
+  {
+   "fetch_from": "prefix.prefix_name",
+   "fetch_if_empty": 1,
+   "fieldname": "barcode_id",
+   "fieldtype": "Barcode",
+   "label": "Barcode ID"
+  },
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "round_tools_tab",
+   "fieldtype": "Tab Break",
+   "label": "Specification"
+  },
+  {
+   "fieldname": "usage_logs_tab",
+   "fieldtype": "Tab Break",
+   "label": "Usage Logs"
+  },
+  {
+   "fieldname": "current_location",
+   "fieldtype": "Link",
+   "label": "Current Location",
+   "options": "Storage Location"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-05 15:38:40.458766",
+ "modified_by": "Administrator",
+ "module": "Plant Manager",
+ "name": "Cutting Tool",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
