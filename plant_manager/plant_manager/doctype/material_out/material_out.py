@@ -53,7 +53,7 @@ class MaterialOut(Document):
 	@frappe.whitelist()
 	def create_ssl_entry(self):
 		for a in self.get("component_table"):
-			print(a.batch)
+			#print(a.batch)
 			doc = frappe.get_doc("Production Work Order", a.batch)
 			doc.append('ssl_entry', {
 				'date': self.p_date,

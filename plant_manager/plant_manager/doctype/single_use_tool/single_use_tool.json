@@ -1,61 +1,60 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:prefix",
- "creation": "2025-12-24 15:37:17.327567",
+ "autoname": "field:tool_name",
+ "creation": "2026-01-06 12:15:06.515983",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "cutting_tool_type",
-  "counter",
-  "column_break_vahn",
-  "prefix",
-  "prefix_name"
+  "tool_name",
+  "returned_qty",
+  "total_qty",
+  "column_break_oqdj",
+  "stock_qty",
+  "description"
  ],
  "fields": [
   {
-   "fetch_from": "cutting_tool_type.abbreviation",
-   "fetch_if_empty": 1,
-   "fieldname": "prefix",
+   "fieldname": "tool_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Prefix",
-   "reqd": 1,
+   "label": "Tool Name",
    "unique": 1
   },
   {
-   "fieldname": "counter",
+   "fieldname": "returned_qty",
    "fieldtype": "Float",
-   "label": "Counter",
-   "non_negative": 1,
-   "precision": "0"
+   "label": "Returned Qty",
+   "read_only": 1
   },
   {
-   "fieldname": "cutting_tool_type",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Cutting Tool Type",
-   "options": "Cutting Tool Type",
-   "reqd": 1
-  },
-  {
-   "fieldname": "column_break_vahn",
+   "fieldname": "column_break_oqdj",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "prefix_name",
-   "fieldtype": "Data",
-   "label": "Prefix Name",
+   "fieldname": "stock_qty",
+   "fieldtype": "Float",
+   "label": "Stock Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description "
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty",
    "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-08 19:44:34.031590",
+ "modified": "2026-01-06 18:17:34.705212",
  "modified_by": "Administrator",
  "module": "Plant Manager",
- "name": "Cutting Tool Prefix",
+ "name": "Single Use Tool",
  "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
@@ -80,9 +79,18 @@
    "read": 1,
    "report": 1,
    "role": "T-Tool Crib Manager",
-   "select": 1,
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "T-Operator",
+   "select": 1,
+   "share": 1
   }
  ],
  "row_format": "Dynamic",

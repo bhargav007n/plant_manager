@@ -45,28 +45,33 @@
    "fieldname": "cutting_tool_type",
    "fieldtype": "Link",
    "label": "Cutting Tool Type",
-   "options": "Cutting Tool Type"
+   "options": "Cutting Tool Type",
+   "reqd": 1
   },
   {
    "fieldname": "grade_and_coating",
    "fieldtype": "Select",
    "label": "Grade and Coating",
-   "options": "\nHSS\nHSS-E (Co 5%)\nHSS Co (Co 8%)\nCarbide-Plain\nCarbide- Alcrona"
+   "options": "\nHSS\nHSS-E (Co 5%)\nHSS Co (Co 8%)\nCarbide-Plain\nCarbide- Alcrona",
+   "reqd": 1
   },
   {
    "fieldname": "tip_radius",
    "fieldtype": "Float",
-   "label": "Tip Radius"
+   "label": "Tip Radius",
+   "reqd": 1
   },
   {
    "fieldname": "shank_diameter",
    "fieldtype": "Float",
-   "label": "Shank Diameter"
+   "label": "Shank Diameter",
+   "reqd": 1
   },
   {
    "fieldname": "relieve_diameter",
    "fieldtype": "Float",
-   "label": "Relieve Diameter"
+   "label": "Relieve Diameter",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_dktt",
@@ -75,6 +80,9 @@
   {
    "fieldname": "prefix",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Prefix",
    "options": "Cutting Tool Prefix"
   },
@@ -87,32 +95,38 @@
    "fieldname": "application_material",
    "fieldtype": "Select",
    "label": "Application Material",
-   "options": "\nM.S\nAlloy Steel\nS.S\nAluminum\nBrass\nCopper"
+   "options": "\nGeneral\nM.S\nAlloy Steel\nS.S\nAluminium\nBrass\nCopper",
+   "reqd": 1
   },
   {
    "fieldname": "tip_angle",
    "fieldtype": "Float",
-   "label": "Tip Angle"
+   "label": "Tip Angle",
+   "reqd": 1
   },
   {
    "fieldname": "flute_length",
    "fieldtype": "Float",
-   "label": "Flute Length"
+   "label": "Flute Length",
+   "reqd": 1
   },
   {
    "fieldname": "overall_length",
    "fieldtype": "Float",
-   "label": "Overall Length"
+   "label": "Overall Length",
+   "reqd": 1
   },
   {
    "fieldname": "relieve_length",
    "fieldtype": "Float",
-   "label": "Relieve Length"
+   "label": "Relieve Length",
+   "reqd": 1
   },
   {
    "fieldname": "cutting_dia",
    "fieldtype": "Data",
-   "label": "Cutting Dia"
+   "label": "Cutting Dia",
+   "reqd": 1
   },
   {
    "fetch_from": "prefix.prefix_name",
@@ -121,6 +135,7 @@
    "fieldtype": "Data",
    "label": "Cutting Tool ID",
    "read_only": 1,
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -132,7 +147,8 @@
    "fieldname": "usage_log",
    "fieldtype": "Table",
    "label": "Usage Log",
-   "options": "Cutting Tool Usage Log"
+   "options": "Cutting Tool Usage Log",
+   "read_only": 1
   },
   {
    "fieldname": "current_status_section",
@@ -143,25 +159,29 @@
   {
    "fieldname": "issued_date",
    "fieldtype": "Datetime",
-   "label": "Issued Date"
+   "label": "Issued Date",
+   "read_only": 1
   },
   {
    "fieldname": "issued_to",
    "fieldtype": "Link",
    "label": "Issued to",
-   "options": "Work Force"
+   "options": "Work Force",
+   "read_only": 1
   },
   {
    "fieldname": "to_machine",
    "fieldtype": "Link",
    "label": "To Machine",
-   "options": "Machine and Equipment List"
+   "options": "Machine and Equipment List",
+   "read_only": 1
   },
   {
    "fieldname": "for_component",
    "fieldtype": "Link",
    "label": "For Component",
-   "options": "Component"
+   "options": "Component",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_lnnu",
@@ -170,13 +190,14 @@
   {
    "fieldname": "usage_info",
    "fieldtype": "Small Text",
-   "label": "Usage Info"
+   "label": "Usage Info",
+   "read_only": 1
   },
   {
    "fieldname": "status",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "label": "Status",
-   "options": "\nReady to use\nMove to resharp\nBroken"
+   "read_only": 1
   },
   {
    "fieldname": "column_break_jydq",
@@ -185,6 +206,9 @@
   {
    "fieldname": "variable_id",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Variable ID",
    "read_only": 1
   },
@@ -219,13 +243,14 @@
    "fieldname": "current_location",
    "fieldtype": "Link",
    "label": "Current Location",
-   "options": "Storage Location"
+   "options": "Storage Location",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-05 15:38:40.458766",
+ "modified": "2026-01-13 16:52:19.269887",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Cutting Tool",
@@ -243,6 +268,29 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "T-Tool Crib Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "T-Operator",
+   "select": 1,
+   "share": 1
   }
  ],
  "row_format": "Dynamic",

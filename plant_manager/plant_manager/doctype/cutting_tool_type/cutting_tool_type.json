@@ -13,19 +13,24 @@
   {
    "fieldname": "type",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Type",
+   "reqd": 1,
    "unique": 1
   },
   {
    "fieldname": "abbreviation",
    "fieldtype": "Data",
-   "label": "Abbreviation"
+   "in_list_view": 1,
+   "label": "Abbreviation",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-25 16:46:25.575050",
+ "modified": "2026-01-08 19:46:16.425385",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Cutting Tool Type",

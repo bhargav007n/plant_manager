@@ -11,7 +11,7 @@
   "accessory_type",
   "barcode_id",
   "column_break_jydq",
-  "variable_id",
+  "search_id",
   "prefix",
   "description",
   "current_status_section",
@@ -45,11 +45,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "variable_id",
-   "fieldtype": "Data",
-   "label": "Variable ID"
-  },
-  {
    "fieldname": "prefix",
    "fieldtype": "Link",
    "label": "Prefix",
@@ -69,31 +64,36 @@
   {
    "fieldname": "issued_date",
    "fieldtype": "Datetime",
-   "label": "Issued Date"
+   "label": "Issued Date",
+   "read_only": 1
   },
   {
    "fieldname": "issued_to",
    "fieldtype": "Link",
    "label": "Issued to",
-   "options": "Work Force"
+   "options": "Work Force",
+   "read_only": 1
   },
   {
    "fieldname": "to_machine",
    "fieldtype": "Link",
    "label": "To Machine",
-   "options": "Machine and Equipment List"
+   "options": "Machine and Equipment List",
+   "read_only": 1
   },
   {
    "fieldname": "for_component",
    "fieldtype": "Link",
    "label": "For Component",
-   "options": "Component"
+   "options": "Component",
+   "read_only": 1
   },
   {
    "fieldname": "current_location",
    "fieldtype": "Link",
    "label": "Current Location",
-   "options": "Storage Location"
+   "options": "Storage Location",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_lnnu",
@@ -101,14 +101,15 @@
   },
   {
    "fieldname": "status",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "label": "Status",
-   "options": "\nReady to use\nAllocated\nAllocated for future\nNeed repair\nBroken"
+   "read_only": 1
   },
   {
    "fieldname": "usage_info",
    "fieldtype": "Small Text",
-   "label": "Usage Info"
+   "label": "Usage Info",
+   "read_only": 1
   },
   {
    "fieldname": "usage_logs_tab",
@@ -124,7 +125,8 @@
    "fieldname": "usage_log",
    "fieldtype": "Table",
    "label": "Usage Log",
-   "options": "Cutting Tool Usage Log"
+   "options": "Cutting Tool Usage Log",
+   "read_only": 1
   },
   {
    "fieldname": "accessory_type",
@@ -140,12 +142,17 @@
    "label": "Accessory ID",
    "read_only": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "search_id",
+   "fieldtype": "Data",
+   "label": "Search ID"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-05 19:46:45.732684",
+ "modified": "2026-01-13 19:05:08.523701",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Machine Tool Accessory",
@@ -163,6 +170,29 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "T-Tool Crib Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "T-Operator",
+   "select": 1,
+   "share": 1
   }
  ],
  "row_format": "Dynamic",

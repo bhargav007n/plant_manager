@@ -51,6 +51,7 @@ class MachineToolAccessory(Document):
 		self.usage_info = None
 		self.current_location = None
 		self.issued_date = None
+		self.status= None
 		#frappe.throw("hi, validating")
 
 		# evaluating & assigning values
@@ -67,11 +68,14 @@ class MachineToolAccessory(Document):
 					self.for_component =rowx.for_component	
 					self.usage_info = rowx.usage_info	
 					self.current_location = rowx.issued_location
+					self.status = rowx.status
 					self.issued_date = a
-					
+										
 					# if it is returned 
 					if rowx.returned_date:
 						self.issued_date = rowx.returned_date
+						self.status = rowx.status
+						self.usage_info = rowx.returned_info
 						self.current_location =	rowx.returned_location
 			
 

@@ -1,25 +1,29 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:storage_name",
  "creation": "2025-12-24 17:54:41.700477",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_it2u"
+  "storage_name"
  ],
  "fields": [
   {
-   "fieldname": "section_break_it2u",
-   "fieldtype": "Section Break"
+   "fieldname": "storage_name",
+   "fieldtype": "Data",
+   "label": "Storage Name",
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-24 17:54:41.700477",
+ "modified": "2026-01-08 20:12:11.736585",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Storage Location",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

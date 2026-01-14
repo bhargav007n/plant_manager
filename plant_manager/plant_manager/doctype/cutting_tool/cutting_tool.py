@@ -17,6 +17,11 @@ class CuttingTool(Document):
 
 	def validate(self):
 		self.update_status()
+		self.update_variableid()
+
+	@frappe.whitelist()
+	def update_variableid(self):
+		self.variable_id = "".join(filter(None, [self.prefix,"-CD",str(int(self.cutting_dia)),"-FL",str(int(self.flute_length)),"-TR",str(int(self.tip_radius)),"-TA",str(int(self.tip_angle)),"°-SD",str(int(self.shank_diameter)),"-OL",str(int(self.overall_length)),"-RD",str(int(self.relieve_diameter)),"-RL",str(int(self.relieve_length))]))
 
 	@frappe.whitelist()
 	def counter_add(self):
@@ -53,6 +58,7 @@ class CuttingTool(Document):
 		self.usage_info = None
 		self.current_location = None
 		self.issued_date = None
+		self.status= None
 		#frappe.throw("hi, validating")
 
 		# evaluating & assigning values
@@ -69,10 +75,13 @@ class CuttingTool(Document):
 					self.for_component =rowx.for_component	
 					self.usage_info = rowx.usage_info	
 					self.current_location = rowx.issued_location
+					self.status = rowx.status
 					self.issued_date = a
 					
 					# if it is returned 
 					if rowx.returned_date:
 						self.issued_date = rowx.returned_date
+						self.usage_info = rowx.returned_info
 						self.current_location =	rowx.returned_location
+						self.status = rowx.status
 			
