@@ -1,0 +1,128 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"INbRAg1alG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Tool Crib &amp; Accessories Management</span>\",\"col\":12}},{\"id\":\"gloCd0y1qX\",\"type\":\"card\",\"data\":{\"card_name\":\"Cutting Tool Management\",\"col\":4}},{\"id\":\"VGpAwbfNFx\",\"type\":\"card\",\"data\":{\"card_name\":\"Accessories Managment\",\"col\":4}}]",
+ "creation": "2025-12-24 16:30:07.890793",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "",
+ "idx": 0,
+ "indicator_color": "pink",
+ "is_hidden": 0,
+ "label": "Tool Crib Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Accessories Managment",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Machine Tool Accessory",
+   "link_count": 0,
+   "link_to": "Machine Tool Accessory",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Accessory Type",
+   "link_count": 0,
+   "link_to": "Accessory Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Accessory Prefix",
+   "link_count": 0,
+   "link_to": "Accessory Prefix",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cutting Tool Management",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cutting Tool",
+   "link_count": 0,
+   "link_to": "Cutting Tool",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cutting Tool Type",
+   "link_count": 0,
+   "link_to": "Cutting Tool Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cutting Tool Prefix",
+   "link_count": 0,
+   "link_to": "Cutting Tool Prefix",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Single Use Tool",
+   "link_count": 0,
+   "link_to": "Single Use Tool",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tool Usage Log",
+   "link_count": 0,
+   "link_to": "Tool Usage Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-01-14 19:39:06.367028",
+ "modified_by": "Administrator",
+ "module": "Plant Manager",
+ "name": "Tool Crib Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 8.0,
+ "shortcuts": [],
+ "title": "Tool Crib Management"
+}
