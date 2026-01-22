@@ -35,7 +35,8 @@
   {
    "fieldname": "prefix_name",
    "fieldtype": "Data",
-   "label": "Prefix Name"
+   "label": "Prefix Name",
+   "read_only": 1
   },
   {
    "fieldname": "accessory_type",
@@ -47,7 +48,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-05 19:00:44.852737",
+ "modified": "2026-01-22 12:02:33.168530",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Accessory Prefix",

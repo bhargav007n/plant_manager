@@ -38,7 +38,8 @@
    "fetch_if_empty": 1,
    "fieldname": "barcode_id",
    "fieldtype": "Barcode",
-   "label": "Barcode ID"
+   "label": "Barcode ID",
+   "permlevel": 10
   },
   {
    "fieldname": "column_break_jydq",
@@ -152,7 +153,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-13 19:05:08.523701",
+ "modified": "2026-01-22 12:07:59.643007",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Machine Tool Accessory",

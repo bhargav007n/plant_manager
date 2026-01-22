@@ -10,7 +10,7 @@ class AccessoryPrefix(Document):
 		if self.counter == None:
 			self.counter = 1
 		self.prefix_name= " "
-		self.prefix_name= "".join(filter(None, [self.prefix,"-",str(self.counter)]))
+		self.prefix_name= "".join(filter(None, [self.prefix,"-",str(self.counter).zfill(2)]))
 		
 		# Checking if prefix_name
 		doc = frappe.get_doc("Accessory Type", self.accessory_type)

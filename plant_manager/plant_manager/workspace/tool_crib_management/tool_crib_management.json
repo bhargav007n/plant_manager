@@ -112,7 +112,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-01-14 19:39:06.367028",
+ "modified": "2026-01-14 19:48:28.453902",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Tool Crib Management",
@@ -121,7 +121,11 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "T-Tool Crib Manager"
+  }
+ ],
  "sequence_id": 8.0,
  "shortcuts": [],
  "title": "Tool Crib Management"
