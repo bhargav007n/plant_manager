@@ -39,7 +39,7 @@
    "fieldname": "barcode_id",
    "fieldtype": "Barcode",
    "label": "Barcode ID",
-   "permlevel": 2
+   "read_only": 1
   },
   {
    "fieldname": "column_break_jydq",
@@ -48,8 +48,11 @@
   {
    "fieldname": "prefix",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Prefix",
-   "options": "Accessory Prefix"
+   "options": "Accessory Prefix",
+   "reqd": 1
   },
   {
    "fieldname": "description",
@@ -134,8 +137,10 @@
   {
    "fieldname": "accessory_type",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Accessory Type",
-   "options": "Accessory Type"
+   "options": "Accessory Type",
+   "reqd": 1
   },
   {
    "fetch_from": "prefix.prefix_name",
@@ -157,7 +162,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-22 18:55:36.515232",
+ "modified": "2026-01-23 19:08:48.177759",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Machine Tool Accessory",

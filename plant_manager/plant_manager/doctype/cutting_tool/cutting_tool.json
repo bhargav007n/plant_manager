@@ -84,7 +84,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Prefix",
-   "options": "Cutting Tool Prefix"
+   "options": "Cutting Tool Prefix",
+   "reqd": 1
   },
   {
    "fieldname": "description",
@@ -196,6 +197,7 @@
   {
    "fieldname": "status",
    "fieldtype": "Data",
+   "in_standard_filter": 1,
    "label": "Status",
    "read_only": 1
   },
@@ -242,6 +244,7 @@
   {
    "fieldname": "current_location",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Current Location",
    "options": "Storage Location",
    "read_only": 1
@@ -250,7 +253,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-13 16:52:19.269887",
+ "modified": "2026-01-23 19:08:39.902418",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Cutting Tool",
