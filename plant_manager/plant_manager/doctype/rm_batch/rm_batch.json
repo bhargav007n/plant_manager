@@ -29,7 +29,8 @@
   {
    "fieldname": "atr_no",
    "fieldtype": "Data",
-   "label": "ATR No"
+   "label": "ATR No",
+   "unique": 1
   },
   {
    "fieldname": "column_break_aqsz",
@@ -38,7 +39,8 @@
   {
    "fieldname": "rm_qty",
    "fieldtype": "Float",
-   "label": "RM Qty in mts"
+   "label": "RM Qty in mts",
+   "precision": "3"
   },
   {
    "fieldname": "list_of_cut_rm_batch_wise_section",
@@ -54,7 +56,9 @@
   {
    "fieldname": "p_qty",
    "fieldtype": "Float",
-   "label": "Pending Qty"
+   "label": "Pending Qty",
+   "precision": "3",
+   "read_only": 1
   },
   {
    "fieldname": "date",
@@ -62,9 +66,10 @@
    "label": "Date"
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-13 16:07:10.775900",
+ "modified": "2026-06-04 12:32:56.735284",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "RM Batch",
@@ -83,6 +88,8 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

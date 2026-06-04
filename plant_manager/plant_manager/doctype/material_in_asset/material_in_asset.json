@@ -11,16 +11,24 @@
   "from_warehouse",
   "column_break_qxhb",
   "qty",
-  "to_warehouse"
+  "to_warehouse",
+  "reference_section",
+  "material_out",
+  "column_break_zgqa",
+  "material_out_date"
  ],
  "fields": [
   {
    "fieldname": "component_code",
    "fieldtype": "Link",
    "label": "Component Code",
-   "options": "Component"
+   "options": "Component",
+   "read_only": 1,
+   "reqd": 1
   },
   {
+   "fetch_from": "component_code.uom",
+   "fetch_if_empty": 1,
    "fieldname": "uom",
    "fieldtype": "Link",
    "label": "UOM",
@@ -46,17 +54,43 @@
    "fieldtype": "Link",
    "label": "To Warehouse",
    "options": "Stock Warehouse"
+  },
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "material_out",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Material Out",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zgqa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_out_date",
+   "fieldtype": "Datetime",
+   "label": "Material Out Date",
+   "read_only": 1
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-06-18 16:32:44.103989",
+ "modified": "2026-06-03 15:45:22.540905",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Material In Asset",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

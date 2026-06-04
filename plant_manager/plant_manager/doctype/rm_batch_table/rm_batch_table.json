@@ -27,12 +27,14 @@
   {
    "fieldname": "rm_consumed",
    "fieldtype": "Float",
-   "label": "RM Consumed"
+   "label": "RM Consumed",
+   "precision": "3"
   },
   {
    "fieldname": "cut_qty",
    "fieldtype": "Float",
-   "label": "Cut Qty"
+   "label": "Cut Qty",
+   "precision": "3"
   },
   {
    "fieldname": "material_in",
@@ -40,15 +42,18 @@
    "label": "Material In"
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-05-10 19:00:21.806479",
+ "modified": "2026-06-04 12:19:30.553844",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "RM Batch Table",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

@@ -93,6 +93,7 @@
    "columns": 3,
    "fieldname": "opt_id",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Operation ID",
    "options": "Process Operation",
    "width": "1"
@@ -147,13 +148,14 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-11-22 19:27:22.475808",
+ "modified": "2026-05-15 16:23:26.591850",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "PWO Process Table",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

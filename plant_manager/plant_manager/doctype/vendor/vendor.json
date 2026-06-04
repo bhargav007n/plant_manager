@@ -8,9 +8,11 @@
  "field_order": [
   "details_section",
   "vendor_name",
+  "gst_number",
   "vendor_code",
   "column_break_jhyb",
   "disable",
+  "address",
   "component_details_tab",
   "service_list_section",
   "vendor_process_details"
@@ -45,7 +47,8 @@
   {
    "fieldname": "vendor_code",
    "fieldtype": "Data",
-   "label": "Vendor Code"
+   "label": "Vendor Code",
+   "unique": 1
   },
   {
    "fieldname": "service_list_section",
@@ -57,12 +60,22 @@
    "fieldtype": "Table",
    "label": "Vendor Process Details",
    "options": "Vendor Component Details"
+  },
+  {
+   "fieldname": "gst_number",
+   "fieldtype": "Data",
+   "label": "GST Number"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-13 17:55:36.357025",
+ "modified": "2026-04-14 14:09:09.215426",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Vendor",
@@ -93,6 +106,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

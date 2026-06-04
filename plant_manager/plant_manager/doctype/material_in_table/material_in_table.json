@@ -29,13 +29,17 @@
    "fieldname": "comp_code",
    "fieldtype": "Link",
    "label": "Component code",
-   "options": "Component"
+   "options": "Component",
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "batch",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Batch",
-   "options": "Production Work Order"
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "f_wh",
@@ -89,6 +93,8 @@
    "label": "Material Out"
   },
   {
+   "fetch_from": "comp_code.uom",
+   "fetch_if_empty": 1,
    "fieldname": "uom",
    "fieldtype": "Link",
    "label": "U.O.M",
@@ -120,15 +126,18 @@
    "label": "Duration in min"
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-06-24 17:08:51.152377",
+ "modified": "2026-06-03 15:44:46.941997",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Material In Table",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

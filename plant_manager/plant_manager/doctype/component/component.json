@@ -11,10 +11,12 @@
   "component_attachment",
   "details_section",
   "component_name",
+  "is_asset",
   "uom",
   "hsn_sac_code",
   "dos",
   "component_group",
+  "component_cost",
   "column_break_bnsr",
   "component_code",
   "is_rm",
@@ -22,6 +24,7 @@
   "rm_type",
   "cl_mm",
   "blade_mm",
+  "component_weight",
   "component_stock_status_section",
   "column_break_wlhq",
   "fg_qty",
@@ -105,9 +108,9 @@
    "fieldname": "rm_component",
    "fieldtype": "Link",
    "label": "Raw Material Component ",
-   "mandatory_depends_on": "eval:doc.is_rm==0;",
+   "mandatory_depends_on": "eval:(doc.is_rm==0 && doc.is_asset==0);",
    "options": "Component",
-   "read_only_depends_on": "eval:doc.is_rm==1;"
+   "read_only_depends_on": "eval:doc.is_rm==1  || doc.is_asset==1;"
   },
   {
    "fieldname": "column_break_wlhq",
@@ -175,12 +178,30 @@
    "fieldtype": "Link",
    "label": "Component Group",
    "options": "Component Group"
+  },
+  {
+   "fieldname": "component_weight",
+   "fieldtype": "Float",
+   "label": "Component Weight",
+   "precision": "3"
+  },
+  {
+   "fieldname": "component_cost",
+   "fieldtype": "Float",
+   "label": "Component Cost",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_asset",
+   "fieldtype": "Check",
+   "label": "is the component Asset"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-15 19:55:40.355603",
+ "modified": "2026-05-14 11:32:18.573302",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Component",
@@ -211,6 +232,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

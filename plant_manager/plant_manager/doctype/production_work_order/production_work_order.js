@@ -17,15 +17,27 @@ frappe.ui.form.on("Production Work Order", {
 		frm.trigger("pos");
 	},
 
-
+	after_save:function(frm) {
+		if (frm.doc.docstatus === 1) {
+			return frm.call({
+				doc: frm.doc,
+				method: "before_save_trigger",
+				freeze: true,
+				callback: (response) => {
+					console.log(response.message);
+					console.log("before save triggered");
+				},
+			});
+		}
+ 	},
  });
 
  frappe.ui.form.on('PWO SSL', {
 	qty: function(frm) {
-		console.log("calculation triggered");
+		console.log("calculation triggered by qty");
         return frm.call({
 			doc: frm.doc,
-            method: "load_calculations",
+            method: "before_save_trigger",
             freeze: true,
             callback:  (r) => {
                 console.log(r.message);
@@ -33,10 +45,10 @@ frappe.ui.form.on("Production Work Order", {
         });
     },
 	process_id: function (frm) {
-		console.log("calculation triggered");
+		console.log("calculation triggered by processid");
         return frm.call({
 			doc: frm.doc,
-            method: "load_calculations",
+            method: "before_save_trigger",
             freeze: true,
             callback:  (r) => {
                 console.log(r.message);

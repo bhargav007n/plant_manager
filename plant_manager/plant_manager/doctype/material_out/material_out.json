@@ -7,9 +7,11 @@
  "engine": "InnoDB",
  "field_order": [
   "supplier_info_section",
-  "naming_series",
   "vdr",
+  "gst_number",
+  "address",
   "column_break_fghg",
+  "naming_series",
   "p_date",
   "vdr_code",
   "mot",
@@ -21,6 +23,15 @@
   "rm_table",
   "component_table",
   "asset_table",
+  "sub_total_section",
+  "asset_total",
+  "component_total__weight",
+  "column_break_sjss",
+  "rm_total",
+  "total_qty",
+  "column_break_osow",
+  "component_total",
+  "basic_total",
   "material_returned_note_tab",
   "material_in_note_table_section",
   "total_received_qty",
@@ -130,7 +141,8 @@
    "allow_on_submit": 1,
    "fieldname": "total_received_qty",
    "fieldtype": "Float",
-   "label": "Total Received Qty"
+   "label": "Total Received Qty",
+   "precision": "3"
   },
   {
    "allow_on_submit": 1,
@@ -161,12 +173,80 @@
    "label": "Asset Table",
    "mandatory_depends_on": "eval: doc.mot == \"Asset\" || doc.mot == \"Asset and Process Component\";",
    "options": "Material Out Asset"
+  },
+  {
+   "fetch_from": "vdr.gst_number",
+   "fieldname": "gst_number",
+   "fieldtype": "Data",
+   "label": "GST Number"
+  },
+  {
+   "fetch_from": "vdr.address",
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "sub_total_section",
+   "fieldtype": "Section Break",
+   "label": "Sub Total"
+  },
+  {
+   "fieldname": "asset_total",
+   "fieldtype": "Float",
+   "label": "Asset total \u20b9",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rm_total",
+   "fieldtype": "Float",
+   "label": "RM total \u20b9",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_osow",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "component_total",
+   "fieldtype": "Float",
+   "label": "Component Total \u20b9",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "basic_total",
+   "fieldtype": "Float",
+   "label": "Basic Total \u20b9",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "component_total__weight",
+   "fieldtype": "Float",
+   "label": "Component Total  Weight ",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sjss",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty",
+   "precision": "3",
+   "read_only": 1
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-06-16 15:10:03.549079",
+ "modified": "2026-06-01 13:15:50.557787",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Material Out",
@@ -188,6 +268,8 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

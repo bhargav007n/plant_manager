@@ -9,9 +9,7 @@ from frappe.model.document import Document
 class MaterialOut(Document):
 	def on_submit(self):
 		self.create_ssl_entry()
-
-
-
+		#self.update_pending_qty()
 
 	# def validate(self):
 	# 	self.flags.ignore_links = True
@@ -21,8 +19,12 @@ class MaterialOut(Document):
 
 	# def before_cancel(self):
 	# 	self.delete_ssl_entry()
+	
 	@frappe.whitelist()		
 	def update_pending_qty(self):
+		a_qty=0
+		i_qty=0
+		j_qty=0
 		for a in self.get("component_table"):
 			a_qty = 0
 			for b in self.get("mrn"):
@@ -39,14 +41,14 @@ class MaterialOut(Document):
 				
 			i.pending_qty = i.qty - i_qty
 
-		for j in self.get("rm_table"):
+		for j in self.get("asset_table"):
 			j_qty = 0
 			for b in self.get("mrn"):
 				if j.component_code == b.comp_code:
 					j_qty = j_qty + b.received_qty
 				
 			j.pending_qty = j.qty - j_qty
-		
+		self.total_received_qty = a_qty+ i_qty + j_qty
 		self.save(ignore_permissions=True)
 		
 		
@@ -69,7 +71,7 @@ class MaterialOut(Document):
 				ignore_permissions=True, # ignore write permissions during insert
 				)
 			pwodoc =  frappe.get_doc("Production Work Order" , a.batch)
-			pwodoc.load_calculations()
+			pwodoc.before_save_trigger()
 			
 	@frappe.whitelist()	
 	def delete_ssl_entry(self):
@@ -86,4 +88,4 @@ class MaterialOut(Document):
 					frappe.delete_doc("PWO SSL", row.name, ignore_permissions=True)
 					frappe.db.commit()
 					pwodoc =  frappe.get_doc("Production Work Order" , a.batch)
-					pwodoc.load_calculations()
+					pwodoc.before_save_trigger()

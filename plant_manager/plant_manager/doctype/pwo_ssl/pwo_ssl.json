@@ -66,8 +66,7 @@
    "fieldname": "operation_type",
    "fieldtype": "Link",
    "label": "Operation Type",
-   "options": "Process Operation Type",
-   "read_only": 1
+   "options": "Process Operation Type"
   },
   {
    "fieldname": "section_break_vcyl",
@@ -157,15 +156,18 @@
    "label": "Production Duration in min"
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-06-07 14:25:22.397988",
+ "modified": "2026-04-03 16:38:44.642971",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "PWO SSL",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{component}-{operation}",
+ "autoname": "format:{operation}",
  "creation": "2026-02-07 12:22:14.512046",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -114,9 +114,8 @@
   },
   {
    "fieldname": "z_move",
-   "fieldtype": "Select",
-   "label": "Z move",
-   "options": "\nBlock Centre\nRear\nRear Move\nFront\nFront Move\nNone"
+   "fieldtype": "Data",
+   "label": "Z move"
   },
   {
    "description": "Alignment, Stopper, Bottom Block & its Inspection check list",
@@ -220,7 +219,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-31 14:16:33.461522",
+ "modified": "2026-04-02 18:29:01.950095",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Setup Sheet",

@@ -6,19 +6,19 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "is_end_piece",
-  "fg_component",
   "rm_component",
+  "fg_component",
+  "qty",
   "pwo_batch",
   "from_warehouse",
   "uom",
   "column_break_yapn",
-  "qty",
   "rm_consumed",
-  "rm_batch",
-  "to_warehouse",
   "completed_process",
   "operation_status",
+  "rm_batch",
+  "to_warehouse",
+  "is_end_piece",
   "reference_section",
   "material_out",
   "duration",
@@ -28,6 +28,8 @@
  ],
  "fields": [
   {
+   "depends_on": "eval:doc.is_end_piece == 0;",
+   "fetch_from": "fg_component.uom",
    "fieldname": "uom",
    "fieldtype": "Link",
    "label": "U.O.M",
@@ -40,9 +42,11 @@
   {
    "fieldname": "qty",
    "fieldtype": "Float",
-   "label": "Qty of Components"
+   "label": "Qty of Components",
+   "precision": "3"
   },
   {
+   "depends_on": "eval:doc.is_end_piece == 0;",
    "fieldname": "completed_process",
    "fieldtype": "Link",
    "label": "Completed Process",
@@ -51,6 +55,7 @@
    "read_only_depends_on": "eval:doc.is_end_piece=='1';"
   },
   {
+   "depends_on": "eval:doc.is_end_piece == 0;",
    "fieldname": "operation_status",
    "fieldtype": "Link",
    "label": "Operation Status",
@@ -66,12 +71,15 @@
   {
    "fieldname": "material_out",
    "fieldtype": "Data",
-   "label": "Material Out"
+   "label": "Material Out",
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "duration",
    "fieldtype": "Duration",
-   "label": "Duration"
+   "label": "Duration",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_qxum",
@@ -80,12 +88,15 @@
   {
    "fieldname": "mo_date",
    "fieldtype": "Datetime",
-   "label": "Material Out Date"
+   "label": "Material Out Date",
+   "read_only": 1
   },
   {
    "fieldname": "dur_min",
    "fieldtype": "Float",
-   "label": "Duration in min"
+   "label": "Duration in min",
+   "precision": "2",
+   "read_only": 1
   },
   {
    "depends_on": "eval:doc.is_end_piece == 0;",
@@ -96,20 +107,23 @@
    "options": "Component"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "pwo_batch",
-   "fieldtype": "Link",
-   "label": "PWO Batch",
-   "options": "Production Work Order"
+   "fieldtype": "Data",
+   "label": "PWO Batch"
   },
   {
    "fieldname": "from_warehouse",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "From Warehouse",
-   "options": "Stock Warehouse"
+   "options": "Stock Warehouse",
+   "reqd": 1
   },
   {
    "fieldname": "rm_component",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "RM Component",
    "options": "Component"
   },
@@ -118,18 +132,23 @@
    "fieldname": "rm_batch",
    "fieldtype": "Link",
    "label": "RM Batch",
-   "options": "RM Batch"
+   "options": "RM Batch",
+   "read_only": 1
   },
   {
    "fieldname": "to_warehouse",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "To Warehouse",
-   "options": "Stock Warehouse"
+   "options": "Stock Warehouse",
+   "reqd": 1
   },
   {
    "fieldname": "rm_consumed",
    "fieldtype": "Float",
-   "label": "RM consumed  in mm"
+   "label": "RM consumed  in mts",
+   "precision": "3",
+   "read_only": 1
   },
   {
    "default": "0",
@@ -138,15 +157,18 @@
    "label": "is end piece"
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-06-25 12:55:29.673573",
+ "modified": "2026-06-04 13:07:49.527423",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Material In RM",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

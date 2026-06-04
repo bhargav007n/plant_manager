@@ -14,9 +14,11 @@
   "details_section",
   "comp_code",
   "operation_code",
+  "prev_weight",
   "column_break_tdvu",
   "comp_name",
   "operation_name",
+  "prev_cost",
   "description_section",
   "detail_description",
   "operation_station_tab",
@@ -112,12 +114,24 @@
    "label": "Workstation Type",
    "options": "Process Operation Workstation",
    "reqd": 1
+  },
+  {
+   "description": "Weight before this operation for material movement",
+   "fieldname": "prev_weight",
+   "fieldtype": "Float",
+   "label": "Prev Weight"
+  },
+  {
+   "description": "Cost before this operation for material movement",
+   "fieldname": "prev_cost",
+   "fieldtype": "Float",
+   "label": "Prev Cost"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-01 12:25:38.091092",
+ "modified": "2026-04-14 13:57:05.427943",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Process Operation",
