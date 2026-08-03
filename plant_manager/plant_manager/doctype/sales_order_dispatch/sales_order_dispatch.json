@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-06-23 17:41:21.730552",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "so_delivery_date",
+  "component_code",
+  "sales_invoice",
+  "sales_date",
+  "dispatch_qty"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "fieldname": "sales_invoice",
+   "fieldtype": "Data",
+   "label": "Sales Invoice"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "sales_date",
+   "fieldtype": "Date",
+   "label": "Sales Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "dispatch_qty",
+   "fieldtype": "Float",
+   "label": "Dispatch Qty",
+   "precision": "3"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "component_code",
+   "fieldtype": "Link",
+   "label": "Component Code",
+   "options": "Component"
+  },
+  {
+   "allow_on_submit": 1,
+   "description": "Linked to Sales order delivery date",
+   "fieldname": "so_delivery_date",
+   "fieldtype": "Date",
+   "label": "SO Delivery date"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-06-25 16:14:20.806931",
+ "modified_by": "Administrator",
+ "module": "Plant Manager",
+ "name": "Sales Order Dispatch",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

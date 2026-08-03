@@ -9,6 +9,7 @@
   "ven",
   "warehouse_type",
   "column_break_mkct",
+  "is_disabled",
   "warehouse_name"
  ],
  "fields": [
@@ -33,15 +34,22 @@
    "fieldtype": "Link",
    "label": "Warehouse Type",
    "options": "Warehouse Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_disabled",
+   "fieldtype": "Check",
+   "label": "is disabled"
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-09 16:09:00.359385",
+ "modified": "2026-07-07 14:14:42.516192",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Stock Warehouse",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -57,6 +65,8 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

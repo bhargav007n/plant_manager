@@ -9,4 +9,4 @@ class ProcessOperation(Document):
 
 	def validate(self):
 		self.title= " "
-		self.title= ' '.join(filter(None, [self.comp_name, self.operation_name]))
+		self.title= ' - '.join(filter(None, [self.operation_name,self.comp_name ]))

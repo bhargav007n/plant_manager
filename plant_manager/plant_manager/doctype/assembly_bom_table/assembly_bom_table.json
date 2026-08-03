@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-06-18 17:24:17.883620",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bom_component",
+  "uom",
+  "bom_qty"
+ ],
+ "fields": [
+  {
+   "fetch_from": "bom_component.uom",
+   "fetch_if_empty": 1,
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM_"
+  },
+  {
+   "fieldname": "bom_component",
+   "fieldtype": "Link",
+   "label": "BOM Component",
+   "options": "Component"
+  },
+  {
+   "fieldname": "bom_qty",
+   "fieldtype": "Float",
+   "label": "BOM qty",
+   "precision": "3"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-07-07 13:45:44.537509",
+ "modified_by": "Administrator",
+ "module": "Plant Manager",
+ "name": "Assembly BOM Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

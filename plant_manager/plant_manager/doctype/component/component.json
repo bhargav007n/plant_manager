@@ -9,6 +9,7 @@
   "image_section",
   "component_image",
   "component_attachment",
+  "is_disabled",
   "details_section",
   "component_name",
   "is_asset",
@@ -25,6 +26,10 @@
   "cl_mm",
   "blade_mm",
   "component_weight",
+  "section_break_amdb",
+  "is_a_assembly_component",
+  "column_break_vivd",
+  "assembly_bom",
   "component_stock_status_section",
   "column_break_wlhq",
   "fg_qty",
@@ -82,7 +87,8 @@
    "description": "in standard UOM",
    "fieldname": "fg_qty",
    "fieldtype": "Float",
-   "label": "FG Qty"
+   "label": "FG Qty",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_jeut",
@@ -92,7 +98,8 @@
    "description": "in standard UOM",
    "fieldname": "up_qty",
    "fieldtype": "Float",
-   "label": "Under Process Qty"
+   "label": "Under Process Qty",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_kjwz",
@@ -102,7 +109,8 @@
    "description": "in Meters / RM UOM",
    "fieldname": "rm_qty",
    "fieldtype": "Float",
-   "label": "Raw Material Qty"
+   "label": "Raw Material Qty",
+   "read_only": 1
   },
   {
    "fieldname": "rm_component",
@@ -150,12 +158,14 @@
   {
    "fieldname": "cl_mm",
    "fieldtype": "Float",
-   "label": "Cutting Length (in mm)"
+   "label": "Cutting Length (in mm)",
+   "precision": "3"
   },
   {
    "fieldname": "blade_mm",
    "fieldtype": "Float",
-   "label": "Blade wastage (in mm)"
+   "label": "Blade wastage (in mm)",
+   "precision": "3"
   },
   {
    "fieldname": "image_section",
@@ -176,6 +186,8 @@
   {
    "fieldname": "component_group",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_standard_filter": 1,
    "label": "Component Group",
    "options": "Component Group"
   },
@@ -196,12 +208,40 @@
    "fieldname": "is_asset",
    "fieldtype": "Check",
    "label": "is the component Asset"
+  },
+  {
+   "fieldname": "section_break_amdb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_a_assembly_component",
+   "fieldtype": "Check",
+   "label": "is a assembly Component"
+  },
+  {
+   "fieldname": "column_break_vivd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assembly_bom",
+   "fieldtype": "Link",
+   "label": "Assembly BOM",
+   "mandatory_depends_on": "eval:(doc.is_a_assembly_component==1);",
+   "options": "Assembly BOM",
+   "read_only_depends_on": "eval:(doc.is_a_assembly_component==0);"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_disabled",
+   "fieldtype": "Check",
+   "label": "is disabled"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-14 11:32:18.573302",
+ "modified": "2026-07-07 13:24:01.234056",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Component",

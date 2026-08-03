@@ -24,7 +24,7 @@ frappe.ui.form.on("Material Out", {
                     date_field: "pwo_date",
                     allow_child_item_selection: 1,
                     child_fieldname: "osd", // child table fieldname, whose records will be shown & can be filtered
-                    child_columns: ["opt_id","opt_name", "p_qty","moved_to_vendor", "o_comp_qty"], // child item columns to be displayed
+                    child_columns: ["opt_id","p_qty","moved_to_vendor","o_rwk_qty", "o_comp_qty"], // child item columns to be displayed
                     get_query() {
                         return {
                             filters: { 

@@ -7,34 +7,35 @@
  "engine": "InnoDB",
  "field_order": [
   "dispatch_date",
-  "invoice_no",
-  "inv_qty"
+  "document_name",
+  "document_qty"
  ],
  "fields": [
   {
    "allow_on_submit": 1,
-   "fieldname": "inv_qty",
-   "fieldtype": "Float",
-   "label": "Qty"
-  },
-  {
-   "allow_on_submit": 1,
    "fieldname": "dispatch_date",
    "fieldtype": "Datetime",
+   "in_list_view": 1,
    "label": "Dispatch Date"
   },
   {
    "allow_on_submit": 1,
-   "fieldname": "invoice_no",
+   "fieldname": "document_name",
    "fieldtype": "Data",
-   "label": "Invoice No"
+   "label": "Document Name"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "document_qty",
+   "fieldtype": "Float",
+   "label": "Document Qty"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-04-04 13:40:04.126160",
+ "modified": "2026-06-17 20:16:49.292239",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "PWO Dispatch",

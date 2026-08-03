@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-06-24 16:29:53.498510",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "component_code",
+  "uom",
+  "qty",
+  "sales_order",
+  "sa_delivery_date",
+  "price",
+  "b_t_line_total",
+  "sales_tax_percentage",
+  "a_t_line_total"
+ ],
+ "fields": [
+  {
+   "fieldname": "component_code",
+   "fieldtype": "Link",
+   "label": "Component code",
+   "options": "Component"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM_"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Qty",
+   "precision": "3"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Data",
+   "label": "Sales Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Float",
+   "label": "Price",
+   "precision": "2"
+  },
+  {
+   "fieldname": "b_t_line_total",
+   "fieldtype": "Float",
+   "label": "B T Line Total",
+   "precision": "2"
+  },
+  {
+   "fieldname": "sales_tax_percentage",
+   "fieldtype": "Float",
+   "label": "Sales Tax Percentage",
+   "precision": "1"
+  },
+  {
+   "fieldname": "a_t_line_total",
+   "fieldtype": "Float",
+   "label": "A T Line Total",
+   "precision": "2"
+  },
+  {
+   "fieldname": "sa_delivery_date",
+   "fieldtype": "Date",
+   "label": "SA Delivery Date",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-06-25 17:52:58.575858",
+ "modified_by": "Administrator",
+ "module": "Plant Manager",
+ "name": "Sales Invoice Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

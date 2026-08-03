@@ -9,8 +9,24 @@ frappe.ui.form.on("Component", {
                     "is_rm":1
                 }
             }
-        }
-
+        },
+        )
+        frm.set_query( 'dos', function(){
+            return{
+                'filters':{
+                    "component_code":cur_frm.doc.component_code
+                }
+            }
+        },
+        )
+        
+        frm.set_query( 'assembly_bom', function(){
+            return{
+                'filters':{
+                    "component_code":cur_frm.doc.component_code
+                }
+            }
+        },
         )
 	},
 });

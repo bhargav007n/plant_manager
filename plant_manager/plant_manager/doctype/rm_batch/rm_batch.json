@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "RMB-.YY.-.MM.-.###",
  "creation": "2025-05-10 18:47:11.278920",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -69,10 +70,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-06-04 12:32:56.735284",
+ "modified": "2026-07-23 19:21:40.271557",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "RM Batch",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

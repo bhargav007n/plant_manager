@@ -6,14 +6,19 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "item_code",
-  "operation_code",
-  "from_time",
-  "to_time",
   "is_not_a_batch_work",
+  "item_code",
+  "from_time",
   "batch",
+  "fixed_cycle_time",
+  "column_break_qwls",
+  "is_rework",
+  "operation_code",
+  "to_time",
   "produced_qty",
-  "fixed_cycle_time"
+  "section_break_hrja",
+  "s_time",
+  "dur_min"
  ],
  "fields": [
   {
@@ -48,7 +53,9 @@
    "fieldname": "batch",
    "fieldtype": "Link",
    "label": "Batch",
-   "options": "Production Work Order"
+   "mandatory_depends_on": "eval: doc.is_not_a_batch_work == 0;",
+   "options": "Production Work Order",
+   "read_only_depends_on": "eval: doc.is_not_a_batch_work == 1;"
   },
   {
    "fieldname": "produced_qty",
@@ -59,17 +66,44 @@
    "fieldname": "fixed_cycle_time",
    "fieldtype": "Duration",
    "label": "Fixed Cycle Time"
+  },
+  {
+   "fieldname": "column_break_qwls",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_rework",
+   "fieldtype": "Check",
+   "label": "Is rework"
+  },
+  {
+   "fieldname": "section_break_hrja",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "s_time",
+   "fieldtype": "Float",
+   "label": "Total Setting duration in min"
+  },
+  {
+   "fieldname": "dur_min",
+   "fieldtype": "Float",
+   "label": "Total Production duration in min"
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-06-10 17:37:56.622378",
+ "modified": "2026-06-09 16:04:03.774742",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Manual Labour Log",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

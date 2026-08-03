@@ -39,12 +39,14 @@
   {
    "fieldname": "pwo_batch",
    "fieldtype": "Data",
-   "label": "PWO Batch"
+   "label": "PWO Batch",
+   "read_only": 1
   },
   {
    "fieldname": "rm_batch",
    "fieldtype": "Data",
-   "label": "RM Batch"
+   "label": "RM Batch",
+   "read_only": 1
   },
   {
    "default": "0",
@@ -55,15 +57,18 @@
    "read_only": 1
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-06-13 14:52:32.395539",
+ "modified": "2026-06-27 18:20:23.273421",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Purchase Item Table",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

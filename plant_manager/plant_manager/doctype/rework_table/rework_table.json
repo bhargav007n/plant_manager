@@ -23,8 +23,10 @@
   {
    "fieldname": "comp_code",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Component Code",
-   "options": "Component"
+   "options": "Component",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_grym",
@@ -34,30 +36,38 @@
    "fetch_from": "comp_code.component_name",
    "fieldname": "comp_name",
    "fieldtype": "Data",
-   "label": "Component Name"
+   "label": "Component Name",
+   "read_only": 1
   },
   {
    "fieldname": "opt_id",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Operation ID",
-   "options": "Process Operation"
+   "options": "Process Operation",
+   "reqd": 1
   },
   {
    "fetch_from": "opt_id.operation_name",
    "fieldname": "opt_name",
    "fieldtype": "Data",
-   "label": "Operation Name"
+   "label": "Operation Name",
+   "read_only": 1
   },
   {
    "fieldname": "batch",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Batch",
-   "options": "Production Work Order"
+   "options": "Production Work Order",
+   "reqd": 1
   },
   {
    "fieldname": "rew_qty",
    "fieldtype": "Float",
-   "label": "Rework Qty"
+   "in_list_view": 1,
+   "label": "Rework Qty",
+   "reqd": 1
   },
   {
    "fieldname": "warehouse_section",
@@ -67,8 +77,10 @@
   {
    "fieldname": "f_wh",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "From Warehouse",
-   "options": "Stock Warehouse"
+   "options": "Stock Warehouse",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_ptqx",
@@ -77,25 +89,32 @@
   {
    "fieldname": "t_wh",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "To Warehouse",
-   "options": "Stock Warehouse"
+   "options": "Stock Warehouse",
+   "reqd": 1
   },
   {
    "fieldname": "rwk_frm",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Rework from?",
-   "options": "Operation Status"
+   "options": "Operation Status",
+   "reqd": 1
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-05-08 16:50:19.475659",
+ "modified": "2026-06-13 14:11:17.419185",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Rework Table",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

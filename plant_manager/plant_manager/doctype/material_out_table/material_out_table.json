@@ -19,10 +19,11 @@
   "qty",
   "t_wh",
   "for_process",
+  "for_process_display",
   "opt_stat",
-  "pending_qty",
   "total_weight",
-  "total_cost"
+  "total_cost",
+  "pending_qty"
  ],
  "fields": [
   {
@@ -145,13 +146,20 @@
    "label": "Total Weight",
    "precision": "3",
    "read_only": 1
+  },
+  {
+   "fetch_from": "for_process.for_process_display",
+   "fetch_if_empty": 1,
+   "fieldname": "for_process_display",
+   "fieldtype": "Data",
+   "label": "For Process Display "
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-06-03 15:59:48.255340",
+ "modified": "2026-07-04 17:39:29.929408",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Material Out Table",

@@ -8,11 +8,11 @@
  "field_order": [
   "details_section",
   "vendor_name",
-  "gst_number",
-  "vendor_code",
-  "column_break_jhyb",
-  "disable",
   "address",
+  "gst_number",
+  "column_break_jhyb",
+  "is_disable",
+  "vendor_code",
   "component_details_tab",
   "service_list_section",
   "vendor_process_details"
@@ -32,12 +32,6 @@
   {
    "fieldname": "column_break_jhyb",
    "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "disable",
-   "fieldtype": "Check",
-   "label": "Disable"
   },
   {
    "fieldname": "component_details_tab",
@@ -64,18 +58,25 @@
   {
    "fieldname": "gst_number",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "GST Number"
   },
   {
    "fieldname": "address",
    "fieldtype": "Small Text",
    "label": "Address"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_disable",
+   "fieldtype": "Check",
+   "label": "is disable"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-14 14:09:09.215426",
+ "modified": "2026-07-07 13:53:49.758590",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Vendor",

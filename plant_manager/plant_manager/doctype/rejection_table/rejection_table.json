@@ -24,20 +24,26 @@
   {
    "fieldname": "comp_code",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Component Code",
-   "options": "Component"
+   "options": "Component",
+   "reqd": 1
   },
   {
    "fieldname": "opt_id",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Operation ID",
-   "options": "Process Operation"
+   "options": "Process Operation",
+   "reqd": 1
   },
   {
    "fieldname": "batch",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Batch",
-   "options": "Production Work Order"
+   "options": "Production Work Order",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_grym",
@@ -47,13 +53,15 @@
    "fetch_from": "comp_code.component_name",
    "fieldname": "comp_name",
    "fieldtype": "Data",
-   "label": "Component Name"
+   "label": "Component Name",
+   "read_only": 1
   },
   {
    "fetch_from": "opt_id.operation_name",
    "fieldname": "opt_name",
    "fieldtype": "Data",
-   "label": "Operation Name"
+   "label": "Operation Name",
+   "read_only": 1
   },
   {
    "fieldname": "warehouse_section",
@@ -64,7 +72,8 @@
    "fieldname": "f_wh",
    "fieldtype": "Link",
    "label": "From Warehouse",
-   "options": "Stock Warehouse"
+   "options": "Stock Warehouse",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_ptqx",
@@ -74,29 +83,36 @@
    "fieldname": "t_wh",
    "fieldtype": "Link",
    "label": "To Warehouse",
-   "options": "Stock Warehouse"
+   "options": "Stock Warehouse",
+   "reqd": 1
   },
   {
    "fieldname": "rej_frm",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Rejection from?",
-   "options": "Operation Status"
+   "options": "Operation Status",
+   "reqd": 1
   },
   {
    "fieldname": "rej_qty",
    "fieldtype": "Float",
-   "label": "Rejected Qty"
+   "label": "Rejected Qty",
+   "reqd": 1
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-05-08 16:58:49.996774",
+ "modified": "2026-06-13 16:12:25.537363",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Rejection Table",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

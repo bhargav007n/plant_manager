@@ -89,14 +89,17 @@ class MaterialIn(Document):
 				'operation_status': a.operation_status,
 				'from_warehouse': a.f_wh,
 				'to_warehouse': a.t_wh,
-				'duration': a.duration,
 				'dur_min' : a.dur_min,
-			})
+				'duration': a.duration,
+				})
 			doc.save(
 				ignore_permissions=True, # ignore write permissions during insert
 				)
 			pwodoc =  frappe.get_doc("Production Work Order" , a.batch)
 			pwodoc.load_calculations()
+			pwodoc.save(
+				ignore_permissions=True, # ignore write permissions during insert
+				)
 			
 	@frappe.whitelist()	
 	def delete_ssl_mrn_entry(self):
@@ -206,6 +209,13 @@ class MaterialIn(Document):
 		
 	@frappe.whitelist()	
 	def create_pwo(self):
+
+		# Verify if the default warehouse
+		if not frappe.get_doc("Master Settings").default_rework_warehouse:
+			frappe.throw("Please input the default Rework Warehouse in the Master Setting page ")
+		if not frappe.get_doc("Master Settings").default_production_warehouse:
+			frappe.throw("Please input the default Production Warehouse in the Master Setting page ")
+
 		for a in self.get("rm_table"):
 			if a.is_end_piece != 1:
 				doc = frappe.new_doc('Production Work Order')

@@ -51,14 +51,17 @@
    "fetch_from": "pos.component_code",
    "fieldname": "comp_code",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Component Code",
    "options": "Component",
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "pwo_qty",
    "fieldtype": "Float",
-   "label": "P.W.O Quantity"
+   "label": "P.W.O Quantity",
+   "reqd": 1
   },
   {
    "fetch_from": "comp_code.component_name",
@@ -176,8 +179,10 @@
   {
    "fieldname": "pos",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Process Operation Sequence",
-   "options": "Process Operation Sequence"
+   "options": "Process Operation Sequence",
+   "reqd": 1
   },
   {
    "fieldname": "warehouse_stock_status_tab",
@@ -207,7 +212,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-06-04 12:53:11.574410",
+ "modified": "2026-06-17 19:37:11.039637",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Production Work Order",

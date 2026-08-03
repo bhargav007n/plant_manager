@@ -1,13 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "REJ-.YY.-.MM.-.###",
  "creation": "2025-05-08 15:52:31.840328",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "created_by",
   "column_break_wbee",
-  "date_time",
+  "date",
   "amended_from",
   "section_break_ihsd",
   "rej_lst"
@@ -39,23 +40,25 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "date_time",
-   "fieldtype": "Datetime",
-   "label": "Date Time"
-  },
-  {
    "fieldname": "section_break_ihsd",
    "fieldtype": "Section Break"
+  },
+  {
+   "default": "Now",
+   "fieldname": "date",
+   "fieldtype": "Datetime",
+   "label": "Date"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-13 17:51:15.899389",
+ "modified": "2026-06-15 18:17:41.368298",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Rejection Log",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -99,6 +102,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

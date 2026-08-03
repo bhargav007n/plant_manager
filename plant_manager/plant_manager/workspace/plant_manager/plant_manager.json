@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"vIrxGwv_ox\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Plant Manager</span>\",\"col\":12}},{\"id\":\"p5qaVGPRgk\",\"type\":\"card\",\"data\":{\"card_name\":\"Basic\",\"col\":4}},{\"id\":\"Kf-DBVkZU3\",\"type\":\"card\",\"data\":{\"card_name\":\"Basic Resource Entries\",\"col\":4}},{\"id\":\"BdVHblsO2-\",\"type\":\"card\",\"data\":{\"card_name\":\"Basic Processing Data \",\"col\":4}},{\"id\":\"7qAiK99SMs\",\"type\":\"card\",\"data\":{\"card_name\":\"Tracker Entries\",\"col\":4}},{\"id\":\"Nnnf4RWUh6\",\"type\":\"card\",\"data\":{\"card_name\":\"Material Movement Entries\",\"col\":4}},{\"id\":\"unB9ePYedQ\",\"type\":\"card\",\"data\":{\"card_name\":\"Quality Assurance Entries\",\"col\":4}},{\"id\":\"OAtJCNsl9s\",\"type\":\"card\",\"data\":{\"card_name\":\"Production Entries\",\"col\":4}},{\"id\":\"EK38RY3eKd\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"LJPsU9c7Lx\",\"type\":\"card\",\"data\":{\"card_name\":\"Orders & Invoices\",\"col\":4}},{\"id\":\"_-nmUaK6Eg\",\"type\":\"card\",\"data\":{\"card_name\":\"Utility\",\"col\":4}},{\"id\":\"xfTcINsC8-\",\"type\":\"card\",\"data\":{\"card_name\":\"Manufacturing\",\"col\":4}}]",
+ "content": "[{\"id\":\"vIrxGwv_ox\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Plant Manager</span>\",\"col\":12}},{\"id\":\"p5qaVGPRgk\",\"type\":\"card\",\"data\":{\"card_name\":\"Basic\",\"col\":4}},{\"id\":\"Kf-DBVkZU3\",\"type\":\"card\",\"data\":{\"card_name\":\"Basic Resource Entries\",\"col\":4}},{\"id\":\"BdVHblsO2-\",\"type\":\"card\",\"data\":{\"card_name\":\"Basic Processing Data \",\"col\":4}},{\"id\":\"7qAiK99SMs\",\"type\":\"card\",\"data\":{\"card_name\":\"Tracker Entries\",\"col\":4}},{\"id\":\"Nnnf4RWUh6\",\"type\":\"card\",\"data\":{\"card_name\":\"Material Movement Entries\",\"col\":4}},{\"id\":\"unB9ePYedQ\",\"type\":\"card\",\"data\":{\"card_name\":\"Quality Assurance Entries\",\"col\":4}},{\"id\":\"OAtJCNsl9s\",\"type\":\"card\",\"data\":{\"card_name\":\"Production Entries\",\"col\":4}},{\"id\":\"EK38RY3eKd\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"LJPsU9c7Lx\",\"type\":\"card\",\"data\":{\"card_name\":\"Orders & Invoices\",\"col\":4}},{\"id\":\"_-nmUaK6Eg\",\"type\":\"card\",\"data\":{\"card_name\":\"Utility\",\"col\":4}},{\"id\":\"xfTcINsC8-\",\"type\":\"card\",\"data\":{\"card_name\":\"Manufacturing\",\"col\":4}},{\"id\":\"1YwUCA-PX4\",\"type\":\"card\",\"data\":{\"card_name\":\"Tool Crib Managment\",\"col\":4}}]",
  "creation": "2025-02-27 17:49:22.407887",
  "custom_blocks": [],
  "docstatus": 0,
@@ -87,35 +87,6 @@
    "label": "Material In",
    "link_count": 0,
    "link_to": "Material In",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Tracker Entries",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "RM Batch",
-   "link_count": 0,
-   "link_to": "RM Batch",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Production Work Order",
-   "link_count": 0,
-   "link_to": "Production Work Order",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -298,8 +269,66 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Basic",
+   "label": "Manufacturing",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Setup Sheet",
+   "link_count": 0,
+   "link_to": "Setup Sheet",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tracker Entries",
    "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "RM Batch",
+   "link_count": 0,
+   "link_to": "RM Batch",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Production Work Order",
+   "link_count": 0,
+   "link_to": "Production Work Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Assembly Log",
+   "link_count": 0,
+   "link_to": "Assembly Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Basic",
+   "link_count": 6,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -337,18 +366,29 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Manufacturing",
-   "link_count": 1,
+   "label": "Assembly BOM",
+   "link_count": 0,
+   "link_to": "Assembly BOM",
    "link_type": "DocType",
    "onboard": 0,
-   "type": "Card Break"
+   "type": "Link"
   },
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Setup Sheet",
+   "label": "Customer",
    "link_count": 0,
-   "link_to": "Setup Sheet",
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vendor",
+   "link_count": 0,
+   "link_to": "Vendor",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -357,7 +397,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Basic Resource Entries",
-   "link_count": 8,
+   "link_count": 7,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -405,16 +445,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Vendor",
-   "link_count": 0,
-   "link_to": "Vendor",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Asset",
    "link_count": 0,
    "link_to": "Asset",
@@ -441,9 +471,98 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tool Crib Managment",
+   "link_count": 8,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cutting Tool",
+   "link_count": 0,
+   "link_to": "Cutting Tool",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cutting Tool Type",
+   "link_count": 0,
+   "link_to": "Cutting Tool Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cutting Tool Prefix",
+   "link_count": 0,
+   "link_to": "Cutting Tool Prefix",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Single Use Tool",
+   "link_count": 0,
+   "link_to": "Single Use Tool",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tool Usage Log",
+   "link_count": 0,
+   "link_to": "Tool Usage Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Machine Tool Accessory",
+   "link_count": 0,
+   "link_to": "Machine Tool Accessory",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Accessory Type",
+   "link_count": 0,
+   "link_to": "Accessory Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Accessory Prefix",
+   "link_count": 0,
+   "link_to": "Accessory Prefix",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-04-01 12:09:56.031290",
+ "modified": "2026-07-07 15:32:22.591132",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Plant Manager",

@@ -14,29 +14,39 @@
   {
    "fieldname": "comp_id",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Component ID",
-   "options": "Component"
+   "options": "Component",
+   "reqd": 1
   },
   {
    "fieldname": "batch",
-   "fieldtype": "Data",
-   "label": "Batch"
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Batch",
+   "options": "Production Work Order",
+   "reqd": 1
   },
   {
    "fieldname": "req_qty",
    "fieldtype": "Float",
-   "label": "Required Qty"
+   "in_list_view": 1,
+   "label": "Required Qty",
+   "reqd": 1
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-05-12 12:35:21.433925",
+ "modified": "2026-06-17 15:55:12.801208",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Assembly Table",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

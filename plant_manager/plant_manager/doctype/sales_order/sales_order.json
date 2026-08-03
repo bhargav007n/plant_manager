@@ -1,12 +1,29 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "SO-.YY.-.MM.-.###",
  "creation": "2025-06-11 11:47:33.909241",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_lo7i",
-  "amended_from"
+  "customer",
+  "customer_po_number",
+  "amended_from",
+  "column_break_mtrk",
+  "posting_date",
+  "customer_po_date",
+  "status",
+  "items_section",
+  "component_list",
+  "section_break_wcyt",
+  "total_order_qty",
+  "basic_amount",
+  "column_break_xojk",
+  "total_dispatch_qty",
+  "total_amount",
+  "dispatch_details_tab",
+  "dispatch_components"
  ],
  "fields": [
   {
@@ -22,15 +39,118 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_po_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer PO Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_mtrk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_date",
+   "fieldtype": "Datetime",
+   "label": "Posting Date "
+  },
+  {
+   "fieldname": "customer_po_date",
+   "fieldtype": "Date",
+   "label": "Customer PO Date"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "component_list",
+   "fieldtype": "Table",
+   "label": "Component List",
+   "options": "Sales Order Items"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nOpen\nShort Closed\nClosed"
+  },
+  {
+   "fieldname": "dispatch_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Dispatch Details"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "dispatch_components",
+   "fieldtype": "Table",
+   "label": "Dispatch Components",
+   "options": "Sales Order Dispatch"
+  },
+  {
+   "fieldname": "section_break_wcyt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_order_qty",
+   "fieldtype": "Float",
+   "label": "Total Order Qty",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xojk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total_dispatch_qty",
+   "fieldtype": "Float",
+   "label": "Total Dispatch Qty",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "basic_amount",
+   "fieldtype": "Float",
+   "label": "Basic Amount",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "label": "Total amount",
+   "precision": "2",
+   "read_only": 1
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-06-11 11:47:33.909241",
+ "modified": "2026-06-27 16:04:42.001841",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Sales Order",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -47,6 +167,8 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{component_name}-{component_code}-{revision}",
+ "autoname": "format:{component_name}-{revision}",
  "creation": "2025-02-10 18:30:01.051632",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -58,11 +58,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-15 15:23:25.892296",
+ "modified": "2026-07-07 16:50:32.788563",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Process Operation Sequence",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -89,6 +89,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

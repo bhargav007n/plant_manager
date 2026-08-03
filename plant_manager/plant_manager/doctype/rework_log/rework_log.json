@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "RWk-.YY.-.MM.-.###",
  "creation": "2025-05-08 15:52:57.901327",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,7 +9,7 @@
   "section_break_ax3p",
   "created_by",
   "column_break_sqbf",
-  "date_time",
+  "date",
   "amended_from",
   "section_break_hcvg",
   "rwk_lst"
@@ -44,23 +45,25 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "date_time",
-   "fieldtype": "Datetime",
-   "label": "Date Time"
-  },
-  {
    "fieldname": "section_break_hcvg",
    "fieldtype": "Section Break"
+  },
+  {
+   "default": "Now",
+   "fieldname": "date",
+   "fieldtype": "Datetime",
+   "label": "Date"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-13 17:53:04.029113",
+ "modified": "2026-06-13 14:42:26.888245",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Rework Log",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -103,6 +106,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

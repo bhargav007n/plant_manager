@@ -42,18 +42,22 @@
   {
    "fieldname": "process_price",
    "fieldtype": "Float",
-   "label": "Process Price "
+   "label": "Process Price ",
+   "precision": "2"
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-06 19:41:53.673149",
+ "modified": "2026-07-06 17:57:53.731221",
  "modified_by": "Administrator",
  "module": "Plant Manager",
  "name": "Vendor Component Details",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

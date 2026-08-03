@@ -111,11 +111,11 @@ class ProductionWorkOrder(Document):
 
 					# Rework Log
 					if b.transaction_type == "Rework Log":
-						if b.operation_status == "Rework":
+						if b.operation_status == "Completed":
 							qty4 = qty4 + b.qty #qty4 is Rework
 							qty7 = qty7 - b.qty #qty7 is completed
 						
-						if b.operation_status == "Rejection":
+						if b.operation_status == "Rejected":
 							qty4 = qty4 + b.qty #qty4 is Rework
 							qty5 = qty5 - b.qty #qty5 is Rejection
 
@@ -144,7 +144,7 @@ class ProductionWorkOrder(Document):
 							qty6 = qty6 + b.qty #qty6 is conversion qty
 							qty3 = qty3 - b.qty #qty3 is vendor
 						
-						if b.operation_status == "Rejection":
+						if b.operation_status == "Rejected":
 							qty6 = qty6 + b.qty #qty6 is conversion qty
 							qty5 = qty5 - b.qty #qty5 is Rejected qty
 					
@@ -202,7 +202,7 @@ class ProductionWorkOrder(Document):
 			master_settings = frappe.get_doc("Master Settings")
 			if wh==master_settings.default_production_warehouse:
 				total_qty = total_qty+self.pwo_qty
-				frappe.msgprint("Default Warehouse stock updated")
+				#frappe.msgprint("Default Warehouse stock updated")
 			# Only add rows where there is a balance	
 			if total_qty != 0:
 				self.append("wss", {
@@ -211,7 +211,7 @@ class ProductionWorkOrder(Document):
 					"qty": total_qty
 				})
 
-		
+		self.warehouse_stock_status()
 		self.save(ignore_permissions=True)		
 
 
@@ -219,11 +219,139 @@ class ProductionWorkOrder(Document):
 	def calculate_disp(self):
 		ttl_disp = 0
 		for disp in self.get("dispatch"):
-			ttl_disp = ttl_disp + disp.inv_qty
+			ttl_disp = ttl_disp + disp.document_qty
 		if ttl_disp>self.comp_qty:
 			frappe.throw("You cannot dispatch more than completed qty")
 		self.disp_qty = ttl_disp
+
+		# loading status of work order (should always be before self.save() )
+		c = self.comp_qty + self.conv_qty + self.rej_qty
+		if self.pwo_qty > c:
+			self.pwo_status = "Open"
+		if self.pwo_qty == c:
+			self.pwo_status = "Completed"	
 		if self.pwo_qty == self.disp_qty + self.conv_qty + self.rej_qty:
 			self.pwo_status = "Closed"
 
 		self.save(ignore_permissions=True)	
+
+
+
+	@frappe.whitelist()
+	def warehouse_stock_status(self):
+        # 1. Dictionary to aggregate net quantity per (Warehouse, Location)
+        # Key: (warehouse, Operation), Value: net_qty
+		balances = {}
+
+		# First process
+		first_process_id = ""
+		for sq_rw in self.get("osd"):
+			if sq_rw.sid ==1:
+				first_process_id = sq_rw.opt_id
+
+		# Adding inhouse balance
+		first_balance =(frappe.get_doc("Master Settings").default_inhouse_warehouse,first_process_id)
+		balances[first_balance]=self.pwo_qty
+
+        # 2. Loop through each stock movement entry in ssl_entry
+		for entry in self.get("ssl_entry", []):
+			qty = entry.qty or 0.0
+
+			# Deduct quantity from 'From' location
+			if entry.from_warehouse and entry.process_id:
+				a,b = self.warehouse_sorting(entry.transaction_type,entry.operation_status,entry.from_warehouse,entry.process_id,1,0)
+				# a = warehouse and b = operation
+				if entry.operation_type == "FG" and entry.operation_status=="Completed" and entry.transaction_type in ["Rework Log","Rejection Log"]:
+					a=entry.to_warehouse
+					b="Dispatch"
+				from_key = (a,b)
+				balances[from_key] = balances.get(from_key, 0.0) - qty
+
+			# Add quantity to 'To' location
+			if entry.to_warehouse and entry.process_id:
+				a,b = self.warehouse_sorting(entry.transaction_type,entry.operation_status,entry.to_warehouse,entry.process_id,0,1)
+				# a = warehouse and b = operation
+				if entry.operation_type == "FG" and entry.operation_status=="Completed" and entry.transaction_type in ["Material In","In-House Production"]:
+					a=entry.to_warehouse
+					b="Dispatch"
+				to_key = (a,b)
+				balances[to_key] = balances.get(to_key, 0.0) + qty
+
+		# Dispatch deductions
+		if self.dispatch:
+			for disp in self.get("dispatch",[]):
+				disp_key =(frappe.get_doc("Master Settings").default_inhouse_warehouse,"Dispatch")
+				balances[disp_key]= balances.get(disp_key, 0.0) - disp.document_qty
+
+		# 3. Option A: Rebuild the `wss` table completely based on current entries
+		self.set("wss", [])  # Clear existing rows in wss
+
+		for (warehouse, operation), net_qty in balances.items():
+			# Skip zero-balance entries if you only want non-zero positions recorded
+			if net_qty == 0:
+				continue
+
+			self.append("wss", {
+				"warehouse": warehouse,
+				"waiting_operation": operation,
+				"qty": net_qty
+			})
+
+	@frappe.whitelist()
+	def warehouse_sorting(self,transaction_type,operation_status,warehouse,operation,mv_from,mv_to):
+		# General condition
+		a_wh = warehouse
+		b_op = operation
+
+		# Sepecial condition
+		if transaction_type=="Material Out"and operation_status=="Vendor" and mv_from==1:
+			b_op = self.prev_opt(operation)
+
+		if transaction_type=="Material In"and operation_status=="Completed" and mv_to==1:
+					b_op = self.next_opt(operation)
+
+		if transaction_type=="Rework Log"and operation_status=="Completed" and mv_from==1:
+					b_op = self.next_opt(operation)
+
+		if transaction_type=="Rejection Log"and operation_status=="Completed" and mv_from==1:
+							b_op = self.next_opt(operation)
+
+		if transaction_type=="In-House Production"and operation_status=="Completed" and mv_to==1:
+							b_op = self.next_opt(operation)
+
+		if transaction_type=="In-House Production"and operation_status=="Rework" and mv_to==1:
+									b_op = self.next_opt(operation)
+
+
+		return(a_wh,b_op)
+
+
+	@frappe.whitelist()
+	def prev_opt(self, operation_id):
+		req_operation=""
+		last_opt_id=""
+		for a in self.get("osd"):
+			if a.opt_id == operation_id:
+				if a.sid == 1:
+					req_operation = operation_id
+					return(req_operation)
+				if a.sid>1:
+					req_operation = last_opt_id
+					return(req_operation)
+			last_opt_id = operation_id
+		
+
+	@frappe.whitelist()
+	def next_opt(self, operation_id):
+		sid = 0
+		req_operation=""
+		for a in self.get("osd"):
+			if a.opt_id == operation_id:
+				sid = a.sid + 1				
+			if a.sid == sid:
+				req_operation = a.opt_id
+				return(req_operation)
+
+	@frappe.whitelist()
+	def update_waiting_qty(self):
+		pass

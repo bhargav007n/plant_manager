@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-06-25 18:06:43.725642",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "component_code",
+  "pwo_batch",
+  "dispatch_qty"
+ ],
+ "fields": [
+  {
+   "fieldname": "component_code",
+   "fieldtype": "Link",
+   "label": "Component Code",
+   "options": "Component"
+  },
+  {
+   "fieldname": "pwo_batch",
+   "fieldtype": "Link",
+   "label": "PWO Batch",
+   "options": "Production Work Order"
+  },
+  {
+   "fieldname": "dispatch_qty",
+   "fieldtype": "Float",
+   "label": "Dispatch Qty"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-06-25 18:16:13.000626",
+ "modified_by": "Administrator",
+ "module": "Plant Manager",
+ "name": "Sales Invoice PWO",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
